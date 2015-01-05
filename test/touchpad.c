@@ -1915,7 +1915,7 @@ START_TEST(touchpad_left_handed)
 	struct libinput *li = dev->libinput;
 	enum libinput_config_status status;
 
-	status = libinput_device_config_buttons_set_left_handed(d, 1);
+	status = libinput_device_config_set_left_handed(d, 1);
 	ck_assert_int_eq(status, LIBINPUT_CONFIG_STATUS_SUCCESS);
 
 	litest_drain_events(li);
@@ -1960,7 +1960,7 @@ START_TEST(touchpad_left_handed_clickpad)
 	struct libinput *li = dev->libinput;
 	enum libinput_config_status status;
 
-	status = libinput_device_config_buttons_set_left_handed(d, 1);
+	status = libinput_device_config_set_left_handed(d, 1);
 	ck_assert_int_eq(status, LIBINPUT_CONFIG_STATUS_SUCCESS);
 
 	litest_drain_events(li);
@@ -2011,7 +2011,7 @@ START_TEST(touchpad_left_handed_clickfinger)
 	struct libinput *li = dev->libinput;
 	enum libinput_config_status status;
 
-	status = libinput_device_config_buttons_set_left_handed(d, 1);
+	status = libinput_device_config_set_left_handed(d, 1);
 	ck_assert_int_eq(status, LIBINPUT_CONFIG_STATUS_SUCCESS);
 
 	litest_drain_events(li);
@@ -2054,7 +2054,7 @@ START_TEST(touchpad_left_handed_tapping)
 
 	libinput_device_config_tap_set_enabled(dev->libinput_device,
 					       LIBINPUT_CONFIG_TAP_ENABLED);
-	status = libinput_device_config_buttons_set_left_handed(d, 1);
+	status = libinput_device_config_set_left_handed(d, 1);
 	ck_assert_int_eq(status, LIBINPUT_CONFIG_STATUS_SUCCESS);
 
 	litest_drain_events(li);
@@ -2085,7 +2085,7 @@ START_TEST(touchpad_left_handed_tapping_2fg)
 
 	libinput_device_config_tap_set_enabled(dev->libinput_device,
 					       LIBINPUT_CONFIG_TAP_ENABLED);
-	status = libinput_device_config_buttons_set_left_handed(d, 1);
+	status = libinput_device_config_set_left_handed(d, 1);
 	ck_assert_int_eq(status, LIBINPUT_CONFIG_STATUS_SUCCESS);
 
 	litest_drain_events(li);
@@ -2121,7 +2121,7 @@ START_TEST(touchpad_left_handed_delayed)
 	litest_button_click(dev, BTN_LEFT, 1);
 	libinput_dispatch(li);
 
-	status = libinput_device_config_buttons_set_left_handed(d, 1);
+	status = libinput_device_config_set_left_handed(d, 1);
 	ck_assert_int_eq(status, LIBINPUT_CONFIG_STATUS_SUCCESS);
 
 	litest_button_click(dev, BTN_LEFT, 0);
@@ -2138,7 +2138,7 @@ START_TEST(touchpad_left_handed_delayed)
 	litest_button_click(dev, BTN_LEFT, 1);
 	libinput_dispatch(li);
 
-	status = libinput_device_config_buttons_set_left_handed(d, 0);
+	status = libinput_device_config_set_left_handed(d, 0);
 	ck_assert_int_eq(status, LIBINPUT_CONFIG_STATUS_SUCCESS);
 
 	litest_button_click(dev, BTN_RIGHT, 0);
@@ -2171,7 +2171,7 @@ START_TEST(touchpad_left_handed_clickpad_delayed)
 	litest_button_click(dev, BTN_LEFT, 1);
 	libinput_dispatch(li);
 
-	status = libinput_device_config_buttons_set_left_handed(d, 1);
+	status = libinput_device_config_set_left_handed(d, 1);
 	ck_assert_int_eq(status, LIBINPUT_CONFIG_STATUS_SUCCESS);
 
 	litest_button_click(dev, BTN_LEFT, 0);
@@ -2190,7 +2190,7 @@ START_TEST(touchpad_left_handed_clickpad_delayed)
 	litest_button_click(dev, BTN_LEFT, 1);
 	libinput_dispatch(li);
 
-	status = libinput_device_config_buttons_set_left_handed(d, 0);
+	status = libinput_device_config_set_left_handed(d, 0);
 	ck_assert_int_eq(status, LIBINPUT_CONFIG_STATUS_SUCCESS);
 
 	litest_button_click(dev, BTN_LEFT, 0);
